@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Website</title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="auth.js"></script>
+    </head>
+<body class="bg-gray-900 montserrat">
+    <div class="flex items-center justify-center min-h-screen">
+    <form id="loginForm" class="bg-white p-6 rounded-lg shadow-md w-80 space-y-4">
+        <h2 class="text-xl montserrat-Bold text-center">Login</h2>
+        <input type="text" id="username" name="username" placeholder="Username" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        <input type="password" id="password" name="password" placeholder="Password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        <button type="submit" name="login" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+            Login
+        </button>
+        <div class="text-xs text-gray-600 text-center">
+            <p><strong>Test Credentials:</strong></p>
+            <p>admin / admin123</p>
+            <p>user / user123</p>
+        </div>
+        <div id="errorMsg" class="montserrat-Bold text-red-700 px-3 py-2 rounded text-sm text-center">
+            <span id="errorText"></span>
+        </div>
+    </form>
+    
+</div>
+</body>
+</html>
