@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Panel</title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="auth.js"></script>
+    </head>
+    <body class="bg-gray-900 text-white">
+        <header class="montserrat bg-black h-15 md:h-20 text-white text-xs md:text-base px-5 md:px-10 lg:px-20">
+            <div class="flex h-15 md:h-20 items-center justify-between">
+                <div class="flex-1">
+                    <i class="text-lg lg:text-2xl fa-solid fa-terminal"></i>
+                </div>
+                <div class="flex flex-1 justify-end gap-2 md:gap-5 lg:gap-10 items-center">
+                    <span id="adminWelcome" class="text-sm hidden">Welcome, <span id="adminName"></span></span>
+                    <a href="index.html"><button class="nav-button">Logout</button></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-6">
+            <div class="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold">Admin Panel</h1>
+                    <p class="text-gray-300">Hanya admin yang dapat menambah, mengedit, atau menghapus game.</p>
+                </div>
+                <a href="admin.html" class="inline-block bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg">Segarkan</a>
+            </div>
+
+            <section class="mb-8 bg-slate-900 p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4">Formulir Produk</h2>
+                <form method="POST" enctype="multipart/form-data" class="grid gap-4 md:grid-cols-2">
+
+                    <input type="text" name="nama_game" placeholder="Nama Game" required class="w-full border p-2 border-white bg-black text-white">
+                    <input type="number" name="harga" placeholder="Harga" required class="w-full border p-2 border-white bg-black text-white">
+                    <input type="number" name="stok" placeholder="Stok" required class="w-full border p-2 border-white bg-black text-white">
+                    <input type="text" name="platform" placeholder="Platform" required class="w-full border p-2 border-white bg-black text-white">
+                    <select name="genre_id" required class="w-full border p-2 border-white bg-black text-white">
+                        <option>Action RPG</option>
+                        <option>RPG</option>
+                        <option>Action Adventure</option>
+                        <option>Adventure</option>
+                    </select>
+                    <input type="date" name="release_date" required class="w-full border p-2 border-white bg-black text-white"onclick="this.showPicker?.()">
+                    <input type="file" name="img" class="w-full border p-2 border-white bg-black text-white">
+
+                    <div class="md:col-span-2 flex gap-3">
+                        <button type="submit" name="save" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg">Tambah Produk</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="bg-slate-900 p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4">Daftar Produk</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-700 text-sm">
+                        <thead>
+                            <tr class="text-left text-gray-400 uppercase tracking-wider">
+                                <th class="px-4 py-2">ID</th>
+                                <th class="px-4 py-2">Nama</th>
+                                <th class="px-4 py-2">Genre</th>
+                                <th class="px-4 py-2">Harga</th>
+                                <th class="px-4 py-2">Stok</th>
+                                <th class="px-4 py-2">Platform</th>
+                                <th class="px-4 py-2">Tindakan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr>
+                                <td class="px-4 py-3">1</td>
+                                <td class="px-4 py-3">Elden Ring</td>
+                                <td class="px-4 py-3">Action RPG</td>
+                                <td class="px-4 py-3">649000</td>
+                                <td class="px-4 py-3">50</td>
+                                <td class="px-4 py-3">PC/PS5</td>
+                                <td class="px-4 py-3 flex gap-2">
+                                    <a class="bg-blue-600 hover:bg-blue-500 px-3 py-1 rounded-lg">Edit</a>
+                                    <a class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded-lg">Hapus</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">2</td>
+                                <td class="px-4 py-3">Baldur's Gate 3</td>
+                                <td class="px-4 py-3">RPG</td>
+                                <td class="px-4 py-3">859000</td>
+                                <td class="px-4 py-3">30</td>
+                                <td class="px-4 py-3">PC, PS5</td>
+                                <td class="px-4 py-3 flex gap-2">
+                                    <a  class="bg-blue-600 hover:bg-blue-500 px-3 py-1 rounded-lg">Edit</a>
+                                    <a class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded-lg">Hapus</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

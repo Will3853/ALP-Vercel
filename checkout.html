@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Website</title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="bg-black montserrat">
+       <header class="montserrat bg-[#0E0D0D] h-15 md:h-20 text-white text-xs md:text-base px-5 md:px-10 lg:px-20">
+                <div class="flex h-15 md:h-20 items-center">
+                    <div class="flex-1">
+                        <a href="menu.html" class="mouse:pointer"><i class="text-lg lg:text-2xl fa-solid fa-terminal"></i></a>
+                    </div>
+                    <div class="flex flex-1 justify-end gap-2 md:gap-5 lg:gap-10">
+                        <a href = menu.html><button class="nav-button">Home</button></a>
+                        <a href="game.html"><button class="nav-button">Games</button></a>
+                        <a href="checkout.html"><button class="nav-button"><i class="fa-solid fa-basket-shopping h"></i></button></a>
+                        <a href="index.html"><button class="nav-button">Logout</button></a>
+                    </div>
+                </div>
+            </header>
+    <div class="max-w-4xl mx-auto p-6">
+
+    <h1 class="text-3xl font-bold mb-6 text-white">Checkout</h1>
+
+    <div class="space-y-4">
+
+        <div class="flex items-center gap-4 bg-[#0E0D0D] p-4 rounded-xl">
+
+            <img src="Image/img01.jpg" class="w-20 h-20 object-cover rounded-lg">
+
+            <div class="flex-1 text-white">
+                <h2 class="font-bold">
+                    Elden Ring
+                </h2>
+
+                <p class="text-gray-400 text-sm">
+                    Qty: 1
+                </p>
+
+                <p class="text-white">
+                    Rp 649000
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-6 bg-[#0E0D0D] p-4 rounded-xl flex justify-between items-center">
+
+        <h2 class="text-xl font-bold text-white">
+            Total: Rp 649000
+        </h2>
+
+        <a class="bg-black px-5 py-2 rounded-lg hover:bg-green-500 transition text-white">
+            Checkout
+        </a>
+
+    </div>
+
+</div>
+<script src="auth.js"></script>
+    </body>
+</html>
